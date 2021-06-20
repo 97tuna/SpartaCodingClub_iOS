@@ -2,8 +2,8 @@
 <br>
 <!-- 손전등 App -->
 <p align="center">
-    <img width="300px" src="https://user-images.githubusercontent.com/50114556/122387300-b18a8500-cfa9-11eb-86dc-a0eb2125a5ca.png">
-    <img width="300px" src="https://user-images.githubusercontent.com/50114556/122387308-b4857580-cfa9-11eb-995c-038fe6c7b5c5.png">
+    <img width="300px" src="https://user-images.githubusercontent.com/50114556/122678338-611d5c80-d221-11eb-8d83-125b94b8539e.PNG">
+    <img width="300px" src="https://user-images.githubusercontent.com/50114556/122678334-5cf13f00-d221-11eb-9e4b-9b50b98339c7.PNG">
 </p>
 <br>
 
