@@ -159,3 +159,69 @@
         > 우리가 컨스트레인트를 '잘' 설정해두면 앱이 화면에 맞게 프레임을 바꿔준다!
 
         사실 이부분은 약간의 경험이 중요한 부분입니다.
+
+## 04. 여러 화면 다뤄보기
+
+- 6) 화면(UIViewController) 추가하기
+
+    iOS 에서 화면의 기본 단위는 뷰컨트롤러(UIViewController)입니다. 이름을 보면 느낌이 오죠? 뷰를 컨트롤하는 더 큰 개념이라고 생각하면 됩니다. 
+
+    PPT에 비유해보면, 슬라이드 한 장 한 장은 뷰컨트롤러, 한 슬라이드 내에 있는 텍스트나 이미지 등은 각각 뷰라고 볼 수 있겠네요!
+
+    1.  스토리보드에 화면 추가하기  
+
+        View Controller 를 검색해서 추가합니다. 
+
+        ![https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F4ec45f0e-71e7-4f53-b406-7c720cef896f%2FUntitled.png?table=block&id=578bd4ef-a49a-4d07-9811-b81347c15d20&spaceId=83c75a39-3aba-4ba4-a792-7aefe4b07895&width=3170&userId=&cache=v2](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F4ec45f0e-71e7-4f53-b406-7c720cef896f%2FUntitled.png?table=block&id=578bd4ef-a49a-4d07-9811-b81347c15d20&spaceId=83c75a39-3aba-4ba4-a792-7aefe4b07895&width=3170&userId=&cache=v2)
+
+    2.  화면에 라벨과 버튼 하나씩 추가하기
+
+        ![https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F112f4d97-0c60-424c-adb8-114ff810a2a6%2FUntitled.png?table=block&id=baa33676-536e-477e-b899-40a6a31915ad&spaceId=83c75a39-3aba-4ba4-a792-7aefe4b07895&width=7610&userId=&cache=v2](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F112f4d97-0c60-424c-adb8-114ff810a2a6%2FUntitled.png?table=block&id=baa33676-536e-477e-b899-40a6a31915ad&spaceId=83c75a39-3aba-4ba4-a792-7aefe4b07895&width=7610&userId=&cache=v2)
+
+    3.  두 번째 화면 만들기
+
+        ![https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F9c571a39-e9fe-4763-9118-54ee2c0b04a0%2FUntitled.png?table=block&id=27413c5d-e3e3-44cd-8a0a-d37919b5b3f8&spaceId=83c75a39-3aba-4ba4-a792-7aefe4b07895&width=7610&userId=&cache=v2](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F9c571a39-e9fe-4763-9118-54ee2c0b04a0%2FUntitled.png?table=block&id=27413c5d-e3e3-44cd-8a0a-d37919b5b3f8&spaceId=83c75a39-3aba-4ba4-a792-7aefe4b07895&width=7610&userId=&cache=v2)
+
+    4.  ⭐**[중요]** 컨트롤(`^`) 버튼을 누른 채로 '두 번째 화면으로 가기' 버튼과 두 번째 화면 연결하기
+
+        ![https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fcb2f6cae-4bcf-43f2-99a1-48f96cab4f68%2F_2021-03-28__4.43.12.png?table=block&id=864129a9-a67e-4743-b723-f0ade76b42c9&spaceId=83c75a39-3aba-4ba4-a792-7aefe4b07895&width=860&userId=&cache=v2](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fcb2f6cae-4bcf-43f2-99a1-48f96cab4f68%2F_2021-03-28__4.43.12.png?table=block&id=864129a9-a67e-4743-b723-f0ade76b42c9&spaceId=83c75a39-3aba-4ba4-a792-7aefe4b07895&width=860&userId=&cache=v2)
+
+    5.  Present Modally 를 선택
+
+        ![https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F0ea4326b-ce50-4ee5-9c10-5c3b8c229304%2Fpresent_modally_1.jpg?table=block&id=0d559cda-7dcd-4d43-ac84-1cf1fc0a78bf&spaceId=83c75a39-3aba-4ba4-a792-7aefe4b07895&width=860&userId=&cache=v2](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F0ea4326b-ce50-4ee5-9c10-5c3b8c229304%2Fpresent_modally_1.jpg?table=block&id=0d559cda-7dcd-4d43-ac84-1cf1fc0a78bf&spaceId=83c75a39-3aba-4ba4-a792-7aefe4b07895&width=860&userId=&cache=v2)
+
+    6.  Storyboard Entry Point 를 '첫 번째 화면'으로 드래그해서 이동
+
+        ![https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F03e173fa-74b6-4cac-b4cc-122e8039c90a%2F_1.jpg?table=block&id=3fe07b12-fb40-46c4-9a06-ecbef9a29ef9&spaceId=83c75a39-3aba-4ba4-a792-7aefe4b07895&width=4720&userId=&cache=v2](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F03e173fa-74b6-4cac-b4cc-122e8039c90a%2F_1.jpg?table=block&id=3fe07b12-fb40-46c4-9a06-ecbef9a29ef9&spaceId=83c75a39-3aba-4ba4-a792-7aefe4b07895&width=4720&userId=&cache=v2)
+
+    - 실행화면
+
+        ![https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F17999657-f106-4baf-9fc0-4cda8905e4ab%2FUntitled.png?table=block&id=fe09dcf5-bed4-4b6f-8fc9-697aa30700a0&spaceId=83c75a39-3aba-4ba4-a792-7aefe4b07895&width=3690&userId=&cache=v2](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F17999657-f106-4baf-9fc0-4cda8905e4ab%2FUntitled.png?table=block&id=fe09dcf5-bed4-4b6f-8fc9-697aa30700a0&spaceId=83c75a39-3aba-4ba4-a792-7aefe4b07895&width=3690&userId=&cache=v2)
+    
+- 7) 화면 표시 방법(Presentation Style)
+
+    화면이 표시되는 방법에는 여러 가지가 있습니다. 
+
+    - 자동(Automatic)
+    - 전체 화면(Full Screen)
+
+        ![https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F64a0f8ef-ce7c-4df8-99f6-2102f96475d3%2FUntitled.png?table=block&id=e184b283-7b8a-427d-b663-0e4b851ce028&spaceId=83c75a39-3aba-4ba4-a792-7aefe4b07895&width=4070&userId=&cache=v2](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F64a0f8ef-ce7c-4df8-99f6-2102f96475d3%2FUntitled.png?table=block&id=e184b283-7b8a-427d-b663-0e4b851ce028&spaceId=83c75a39-3aba-4ba4-a792-7aefe4b07895&width=4070&userId=&cache=v2)
+
+    - 페이지 시트(Page Sheet)
+
+        ![https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F0ae16996-ce77-42bd-8519-fe2cb497c388%2FUntitled.png?table=block&id=7a83f7fb-fa98-4b61-ace5-b36aeabf1b8a&spaceId=83c75a39-3aba-4ba4-a792-7aefe4b07895&width=3870&userId=&cache=v2](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F0ae16996-ce77-42bd-8519-fe2cb497c388%2FUntitled.png?table=block&id=7a83f7fb-fa98-4b61-ace5-b36aeabf1b8a&spaceId=83c75a39-3aba-4ba4-a792-7aefe4b07895&width=3870&userId=&cache=v2)
+
+    - 그 외 여러가지 : 아이패드와 맥을 지원하거나 특정한 상황을 위해 그 외 여러 가지 표시 방법들이 있으나, 여기서는 다루지 않을 예정입니다!
+
+    자동은 iOS가 해당 문맥에 따라 자동으로 화면 표시 방법을 정합니다. 보통은 Page Sheet 으로 보여집니다. 
+
+- 8) 화면 전환 방법(Transition Style)
+
+    이 부분은 각자 한 번씩 해보면서 본인이 만들고 싶은 앱에 이런 화면 전환을 써야겠다는 생각을 해봅시다!
+
+    ![https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F69b68901-3a25-449b-9e38-0b3e52c93d7e%2FUntitled.png?table=block&id=76bd585a-efa5-47e3-933f-6cae64040112&spaceId=83c75a39-3aba-4ba4-a792-7aefe4b07895&width=1980&userId=&cache=v2](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F69b68901-3a25-449b-9e38-0b3e52c93d7e%2FUntitled.png?table=block&id=76bd585a-efa5-47e3-933f-6cae64040112&spaceId=83c75a39-3aba-4ba4-a792-7aefe4b07895&width=1980&userId=&cache=v2)
+
+    - Cover Vertical
+    - Flip Horizontal
+    - Cross Dissolve
+    - Partial Curl
