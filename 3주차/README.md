@@ -1,5 +1,11 @@
 # SpartaCodingClub_iOS_강의노트_3주차
 
+<p align="center">
+    <img width="300px" src="https://user-images.githubusercontent.com/50114556/123984930-0396c600-da00-11eb-98de-47df4d9e3f0b.PNG">
+    <img width="300px" src="https://user-images.githubusercontent.com/50114556/123984913-ff6aa880-d9ff-11eb-985d-6c18ac780c94.PNG">
+</p>
+<br>
+
 ## **01. 3주차 오늘 배울 것**
 
 - 1) 뷰의 frame 과 constraint
