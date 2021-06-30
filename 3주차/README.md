@@ -225,3 +225,179 @@
     - Flip Horizontal
     - Cross Dissolve
     - Partial Curl
+
+## 05. 내비게이션과 테이블뷰
+
+- 9) 내비게이션 컨트롤러(UINavigationController)
+
+    내비게이션 컨트롤러는 화면 전환을 관리해 주는 UIViewController 의 일종입니다. 각각의 화면을 내비게이션 컨트롤러에 포커 카드처럼 한 장씩 쌓아 올리는 구조(Stack)를 가지고 있죠! 맨 위에 있는 화면 한 장만 보여주고, 왼쪽 상단에 백 버튼을 누르면 맨 위에 있는 화면이 지워지고 그 밑에 있는 화면이 보입니다. 
+
+    백문이 불여일견! 일단 해봅시다!
+
+    1. 스토리보드에 내비게이션 컨트롤러 추가하기
+
+    ![https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fbcbab469-cb90-4689-87b5-e0a03e10ecb3%2FUntitled.png?table=block&id=9c492488-b1c5-4ed9-adcb-d59a7ca8378a&spaceId=83c75a39-3aba-4ba4-a792-7aefe4b07895&width=3170&userId=&cache=v2](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fbcbab469-cb90-4689-87b5-e0a03e10ecb3%2FUntitled.png?table=block&id=9c492488-b1c5-4ed9-adcb-d59a7ca8378a&spaceId=83c75a39-3aba-4ba4-a792-7aefe4b07895&width=3170&userId=&cache=v2)
+
+    2. 내비게이션 컨트롤러 추가 후 화면
+
+    오! 분명 하나만 추가했는데 화면이 두 개로 늘었죠?
+
+    ![https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fbc9d73ca-4488-40a2-8685-5f28bb635da8%2FUntitled.png?table=block&id=c4791fae-dfc7-4099-8918-761cc265972c&spaceId=83c75a39-3aba-4ba4-a792-7aefe4b07895&width=3120&userId=&cache=v2](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fbc9d73ca-4488-40a2-8685-5f28bb635da8%2FUntitled.png?table=block&id=c4791fae-dfc7-4099-8918-761cc265972c&spaceId=83c75a39-3aba-4ba4-a792-7aefe4b07895&width=3120&userId=&cache=v2)
+
+    내비게이션 컨트롤러를 추가하면 자동으로 테이블뷰 컨트롤러(UITableViewController)를 추가해줍니다. 다 이유가 있습니다!
+
+    3. 테이블뷰의 컨텐츠를 static 으로 변경하기
+
+    ![https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Ff73f81f0-e653-405a-b115-d20bc6d11501%2FUntitled.png?table=block&id=cbf9e11a-c85a-4095-93b5-d439e9a082a9&spaceId=83c75a39-3aba-4ba4-a792-7aefe4b07895&width=3900&userId=&cache=v2](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Ff73f81f0-e653-405a-b115-d20bc6d11501%2FUntitled.png?table=block&id=cbf9e11a-c85a-4095-93b5-d439e9a082a9&spaceId=83c75a39-3aba-4ba4-a792-7aefe4b07895&width=3900&userId=&cache=v2)
+
+                                                                그럼 이런 화면이 됩니다!👇
+
+    ![https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F24ea41cc-aca6-40ed-a811-705ae6f65037%2FUntitled.png?table=block&id=07d7af32-b418-412b-8e19-6338f5fd3902&spaceId=83c75a39-3aba-4ba4-a792-7aefe4b07895&width=1410&userId=&cache=v2](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F24ea41cc-aca6-40ed-a811-705ae6f65037%2FUntitled.png?table=block&id=07d7af32-b418-412b-8e19-6338f5fd3902&spaceId=83c75a39-3aba-4ba4-a792-7aefe4b07895&width=1410&userId=&cache=v2)
+
+    이 화면 어디서 많이 보지 않았나요?
+
+    ![https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F228daabf-861b-4906-a20d-983c38c59d61%2Fiphone__1.png?table=block&id=51451f19-10ca-4678-9f2d-7aea9869b385&spaceId=83c75a39-3aba-4ba4-a792-7aefe4b07895&width=8190&userId=&cache=v2](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F228daabf-861b-4906-a20d-983c38c59d61%2Fiphone__1.png?table=block&id=51451f19-10ca-4678-9f2d-7aea9869b385&spaceId=83c75a39-3aba-4ba4-a792-7aefe4b07895&width=8190&userId=&cache=v2)
+
+    바로 아이폰에서 가장 많이 쓰이는 이런 화면입니다. 
+
+    4. 'Root View Controller' 을 `더블클릭`해서 제목 입력하기
+
+    ![https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fff743189-05eb-4f7c-9b0d-7fed2312f8d6%2FUntitled.png?table=block&id=8e99cde7-7245-4e44-9299-4d447b9748eb&spaceId=83c75a39-3aba-4ba4-a792-7aefe4b07895&width=1490&userId=&cache=v2](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fff743189-05eb-4f7c-9b0d-7fed2312f8d6%2FUntitled.png?table=block&id=8e99cde7-7245-4e44-9299-4d447b9748eb&spaceId=83c75a39-3aba-4ba4-a792-7aefe4b07895&width=1490&userId=&cache=v2)
+
+    5. 섹션(section)과 로우(row)에 대해서 잠깐 알아보기
+
+    ![https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F848f651c-4c9d-4176-9808-f4c77c53a900%2Fiphone__2.jpg?table=block&id=b12851b2-45c9-45af-9d06-a8b355cd9baf&spaceId=83c75a39-3aba-4ba4-a792-7aefe4b07895&width=8190&userId=&cache=v2](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F848f651c-4c9d-4176-9808-f4c77c53a900%2Fiphone__2.jpg?table=block&id=b12851b2-45c9-45af-9d06-a8b355cd9baf&spaceId=83c75a39-3aba-4ba4-a792-7aefe4b07895&width=8190&userId=&cache=v2)
+
+    한 줄 한 줄을 `로우`라고 하고 `로우`를 삼삼오오 묶어놓은 걸 `섹션` 이라고 합니다! 그리고 한 로우에 해당하는 뷰는 `테이블뷰 셀` 이라고 합니다. 
+
+    6. 로우 개수를 1개로 줄이기
+
+    ![https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F649863b1-816a-4af0-b3ac-41cfdf8e6a65%2FUntitled.png?table=block&id=4969e765-5a5d-4ff8-9a1f-bcc2e288303a&spaceId=83c75a39-3aba-4ba4-a792-7aefe4b07895&width=5280&userId=&cache=v2](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F649863b1-816a-4af0-b3ac-41cfdf8e6a65%2FUntitled.png?table=block&id=4969e765-5a5d-4ff8-9a1f-bcc2e288303a&spaceId=83c75a39-3aba-4ba4-a792-7aefe4b07895&width=5280&userId=&cache=v2)
+
+    7. 테이블뷰 셀의 Style 을 Basic 으로, Accessory를 Discloser Indicator로 선택하기
+
+    ![https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fcb3e770a-c698-40e8-8c5b-6f64f4d1ce63%2FUntitled.png?table=block&id=114c6a67-7812-4023-a176-e730f8628861&spaceId=83c75a39-3aba-4ba4-a792-7aefe4b07895&width=5310&userId=&cache=v2](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fcb3e770a-c698-40e8-8c5b-6f64f4d1ce63%2FUntitled.png?table=block&id=114c6a67-7812-4023-a176-e730f8628861&spaceId=83c75a39-3aba-4ba4-a792-7aefe4b07895&width=5310&userId=&cache=v2)
+
+    8. Title 을 `더블클릭`해서 이름 변경해주기
+
+    ![https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F99aede5e-73bd-410f-b4e1-234e3b6f1555%2FUntitled.png?table=block&id=15b140cd-71c2-4151-838b-1b894c42b3b1&spaceId=83c75a39-3aba-4ba4-a792-7aefe4b07895&width=2130&userId=&cache=v2](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F99aede5e-73bd-410f-b4e1-234e3b6f1555%2FUntitled.png?table=block&id=15b140cd-71c2-4151-838b-1b894c42b3b1&spaceId=83c75a39-3aba-4ba4-a792-7aefe4b07895&width=2130&userId=&cache=v2)
+
+    9. ⭐**[중요]** 컨트롤(`^`)을 누르고 테이블뷰 셀 드래그해서 연결하기 → Selection Segue → Show
+
+    ![https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fc651e9a2-6aaf-4ee3-abe2-5d59124a5512%2F_2021-03-28__11.42.08.png?table=block&id=5335b01b-adb8-4953-88f2-6dc2235ea3ed&spaceId=83c75a39-3aba-4ba4-a792-7aefe4b07895&width=4070&userId=&cache=v2](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fc651e9a2-6aaf-4ee3-abe2-5d59124a5512%2F_2021-03-28__11.42.08.png?table=block&id=5335b01b-adb8-4953-88f2-6dc2235ea3ed&spaceId=83c75a39-3aba-4ba4-a792-7aefe4b07895&width=4070&userId=&cache=v2)
+
+    ![https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F258084fb-6bfd-4941-9658-3e2be6a2883c%2FUntitled.png?table=block&id=2a3ad915-3f11-4448-b555-0a70dbe3efe5&spaceId=83c75a39-3aba-4ba4-a792-7aefe4b07895&width=3990&userId=&cache=v2](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F258084fb-6bfd-4941-9658-3e2be6a2883c%2FUntitled.png?table=block&id=2a3ad915-3f11-4448-b555-0a70dbe3efe5&spaceId=83c75a39-3aba-4ba4-a792-7aefe4b07895&width=3990&userId=&cache=v2)
+
+    10. 스토리보드 진입점(Storyboard Entry Point)을 내비게이션 컨트롤러로 옮겨서 첫 화면이 되도록 만들기
+
+    ![https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fd4b2f41e-2302-43ef-ac93-9347779a578f%2F_1.jpg?table=block&id=1eb75251-ded8-447f-8c95-f87d600410fa&spaceId=83c75a39-3aba-4ba4-a792-7aefe4b07895&width=2560&userId=&cache=v2](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fd4b2f41e-2302-43ef-ac93-9347779a578f%2F_1.jpg?table=block&id=1eb75251-ded8-447f-8c95-f87d600410fa&spaceId=83c75a39-3aba-4ba4-a792-7aefe4b07895&width=2560&userId=&cache=v2)
+
+    - 실행화면 확인해보기
+
+        ![https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F20675bd0-5c16-4799-a5ab-bd432786238d%2FUntitled.png?table=block&id=94985bea-7a76-4358-894a-37c118bfab8b&spaceId=83c75a39-3aba-4ba4-a792-7aefe4b07895&width=5480&userId=&cache=v2](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F20675bd0-5c16-4799-a5ab-bd432786238d%2FUntitled.png?table=block&id=94985bea-7a76-4358-894a-37c118bfab8b&spaceId=83c75a39-3aba-4ba4-a792-7aefe4b07895&width=5480&userId=&cache=v2)
+
+## 06. Swift 문법 - 상속
+
+- 10) 상속(inheritance)
+
+    상속은 우리가 코드를 덜 쓰게 해주는 무척이나 고마운 기능입니다!
+
+    우리가 중국집을 운영한다고 생각해봅시다!
+
+    메뉴에 짜장면도 있고 간짜장도 있고 삼선짜장도 있습니다. 모두 짜장을 이용한 음식이기 때문에 만드는 방법의 대부분은 같을 겁니다. 각 메뉴의 특징이 들어가는 일부분만 다르겠죠. 짜장면 소스를 만드는 데 간짜장은 그 자리에서 짜장에 양파를 더 넣고 볶아서 만들고, 삼선짜장은 간짜장 소스에 해물을 넣고 볶아서 만듭니다.  
+
+    그럼 이 요리들에 대한 레시피를 적을 때 어떻게 적어야 할까요? 짜장면을 만드는 방법은 일단 자세하게 적어줍니다. 그러면 간짜장 레시피를 적을 때는 '짜장면을 만드는데, 짜장 소스에 양파를 더 넣고 볶는다' 라고 간단하게 적을 수 있지 않을까요? 물론 간짜장을 만드는 방법을 짜장면 만드는 방법처럼 자세하게 적어줄 수도 있지만, 무척이나 귀찮은 일이 될 겁니다. 
+
+    Swift에서도 그런 귀찮음을 줄이기 위해서 `상속`이란 기능을 넣었습니다. 아래 코드를 한 번 볼까요?
+
+    ```swift
+    import UIKit
+
+    class ViewController: UIViewController { //: UIViewController를 상속받습니다.
+
+        @IBOutlet weak var imageView: UIImageView!
+        
+        override func viewDidLoad() {
+            super.viewDidLoad()
+            // Do any additional setup after loading the view.
+        }
+
+        @IBAction func moveButtonClicked(_ sender: Any) {
+            UIView.animate(withDuration: 0.5) {
+                self.imageView.frame = CGRect(x: 20, y: 200, width: 237, height: 235)
+            }
+        }
+        
+    }
+    ```
+
+    UIViewController 를 상속받아서 클래스를 만들면, 그 클래스는 기본적으로 UIViewController 가 동작하는 방법 그대로 동작합니다. 그 상태에서 아주 약간의 코드를 수정해 우리가 원하는 대로 동작하게 만듭니다. 모든 코드를 다 작성하는 것보다 훨씬 간단하겠죠?
+
+    앞의 짜장면 예시로 잠깐 돌아가 볼까요?
+    <br>
+    `짜장면`이라는 클래스가 있습니다. `간짜장`이라는 클래스는 `짜장면` 클래스를 상속받아서 만들어진다면, `짜장면`은 `간짜장`의 상위 클래스(Super Class)이고, `간짜장`은 `짜장면`의 하위 클래스(Sub Class)라고 합니다. 
+    <br>
+    상속에는 몇 가지 규칙이 있습니다.
+
+    1. 구조체(struct) 말고 클래스(class)끼리만 상속이 가능합니다!
+
+    2. 상위 클래스의 함수를 수정하는 것을 `override` 라고 하고, 해당 함수 앞에 `override` 라고 써야 합니다.
+
+    ```swift
+    import UIKit
+
+    class ViewController: UIViewController {
+
+        @IBOutlet weak var imageView: UIImageView!
+        
+        override func viewDidLoad() { // override를 앞에 붙여야합니다. 
+            super.viewDidLoad() // 상위클래스의 viewDidLoad 함수를 호출한다는 의미
+            
+            self.view.backgroundColor = UIColor.blue // 배경화면이 파란색이 되게 수정!
+        }
+
+        @IBAction func moveButtonClicked(_ sender: Any) {
+            UIView.animate(withDuration: 0.5) {
+                self.imageView.frame = CGRect(x: 20, y: 200, width: 237, height: 235)
+            }
+        }
+        
+    }
+    ```
+
+    3. 한 클래스는 하나의 클래스만 상속이 가능합니다. ~~짜장면이면서 짬뽕일 수 없다는 얘깁니다.~~ 
+
+    - 그럼 짬짜면은요...?
+
+        ```swift
+        class 짬짜면 { // 반반 나눠 담는 그릇을 만든다고 생각해야죠
+        		var jjajang = 짜장면()
+        		var jjampong = 짬뽕()
+        }
+        ```
+
+        짬짜면은 짬뽕이랑 짜장면 둘 다를 분리된 한 그릇에 담는 것입니다. 따로 만들어서 같은 곳에 담았을 뿐이죠!
+
+        둘 다 상속받았다면... 그건 짜장면과 짬뽕이 섞여있는... 끔찍한 혼종...
+<br>
+    지금까지 배운 UIButton, UIImageView, UILabel, UISwitch 등등은 모두 UIView 를 상속받습니다. 마찬가지로 UITableViewController, UINavigationController 도 UIViewController 를 상속받아서 만들어져 있습니다! 
+
+## 07. Swift 문법 - 클로져
+
+- 11) 클로져(closure)
+
+    가끔 함수를 쓰다 보면 함수에 `->` 라는게 들어있는 변수를 넣어달라고 합니다. 
+
+    ![https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F9af30910-b048-4d4b-9e11-fd5fc0fc395e%2FUntitled.png?table=block&id=84f18d82-ab9d-4e88-a65f-f20d27d1037b&spaceId=83c75a39-3aba-4ba4-a792-7aefe4b07895&width=2130&userId=&cache=v2](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F9af30910-b048-4d4b-9e11-fd5fc0fc395e%2FUntitled.png?table=block&id=84f18d82-ab9d-4e88-a65f-f20d27d1037b&spaceId=83c75a39-3aba-4ba4-a792-7aefe4b07895&width=2130&userId=&cache=v2)
+
+    이걸 클로져 라고 부르는데, 다른 함수를 해당 함수에 변수로 집어넣는 방법입니다.
+
+    애니메이션을 생각해보면, Swift는 어떻게 움직여야 하는지 모르고 있기 때문에 우리가 규칙을 넣어야 했습니다. 지금까지는 `imageView` 의 `frame` 을 바꾸었죠. 그리고 바뀌는 그 룰을 함수의 형태로 집어넣고 있었습니다. 
+
+    그래서 종종 애니메이션이라든지 네트워크 통신에서 결과물을 어떻게 처리할지 등의 규칙을 클로져 라는 방식으로 집어넣게 되어있습니다. 
+
+    너무 어렵게 생각하지 말고, 함수를 작성하는데 저런 변수가 나오면 자신 있게 엔터키를 눌러줍시다!
+
+    ![https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F30e4c40a-dab4-4f3c-87c8-c31ad330b534%2FUntitled.png?table=block&id=897150c4-aa20-41e4-97d8-c695bedf95be&spaceId=83c75a39-3aba-4ba4-a792-7aefe4b07895&width=1970&userId=&cache=v2](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F30e4c40a-dab4-4f3c-87c8-c31ad330b534%2FUntitled.png?table=block&id=897150c4-aa20-41e4-97d8-c695bedf95be&spaceId=83c75a39-3aba-4ba4-a792-7aefe4b07895&width=1970&userId=&cache=v2)
+
+    Xcode는 굉장히 직관적으로 code 부분을 작성해야 한다고 보여줍니다. 그러면 우리는 살포시 저 안에 코드를 넣으면 되겠죠?
