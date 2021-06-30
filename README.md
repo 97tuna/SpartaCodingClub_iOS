@@ -8,7 +8,7 @@
 <br>
 
 - 한이음이 블렌디드러닝을 목적으로 스파르타 iOS 앱개발 기초반 수강권을 주었다.
-- 기초반이기 때문에 기초 지식을 많이 다루지만, 이번 기회에 기록으로 남겨두려고 한다.
+- 기초반이기 때문에 기초 지식을 많이 다루기에, 이번 기회에 기록으로 남겨두려고 한다.
 
 ## [1주차_과제](https://github.com/97tuna/SpartaCodingClub_iOS/tree/master/1%EC%A3%BC%EC%B0%A8)
 
@@ -31,8 +31,8 @@
 
 > 타이머를 사용해보고, segmentControl를 통해서 값 변경, 타이머의 시간이 줄어들 때 transitionFlipFromBottom 효과도 적용하였다. (AutoLayout 적용)
 
-## [3주차_과제](https://github.com/97tuna/SpartaCodingClub_iOS/tree/master/2%EC%A3%BC%EC%B0%A8)
-<!-- 피보나치킨 App -->
+## [3주차_실습 & 과제](https://github.com/97tuna/SpartaCodingClub_iOS/tree/master/3%EC%A3%BC%EC%B0%A8)
+<!-- 피보나치킨 App (실습)-->
 <p align="center">
     <img width="300px" src="https://user-images.githubusercontent.com/50114556/123984930-0396c600-da00-11eb-98de-47df4d9e3f0b.PNG">
     <img width="300px" src="https://user-images.githubusercontent.com/50114556/123984913-ff6aa880-d9ff-11eb-985d-6c18ac780c94.PNG">
@@ -43,3 +43,12 @@
 피보나치수열을 이용해서 각 인원수 별로 몇 마리의 치킨을 주문해야 적당한지 예측하는 방법입니다.
 
 > Stepper를 사용하여 값을 변경하고, prepare함수를 사용하여 segue로 ChickenOutputViewController에 사람수를 전달하였다 .
+
+<!-- 국민건강보험료 계산 App (과제)-->
+<p align="center">
+    <img width="300px" src="https://user-images.githubusercontent.com/50114556/124001761-e9fd7a80-da0f-11eb-95d4-db45c8b578fd.PNG">
+    <img width="300px" src="https://user-images.githubusercontent.com/50114556/124001740-e7028a00-da0f-11eb-987a-90af25abd123.PNG">
+</p>
+<br>
+
+> 3주차 과제로 입력창과 결과창이 구분되고, 피보나치킨앱과 구성이 유사한 국민건강보험료 계산 앱을 제작하였다.
