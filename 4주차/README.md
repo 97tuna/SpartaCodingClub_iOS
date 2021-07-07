@@ -208,3 +208,97 @@
     필요한 경우 아래 사이트에 접속 후 따라 하면 쉽게 적용할 수 있습니다.
 
     [CocoaPods.org](https://cocoapods.org)
+
+ ## 03. API 서버와의 통신
+
+- 7) 클라이언트와 서버
+
+    ![https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F53e7af22-4a8d-459b-a20a-095853a4baf7%2FAPI_6.jpg?table=block&id=1814405e-cbee-434a-8ed6-5656b895a6f4&spaceId=83c75a39-3aba-4ba4-a792-7aefe4b07895&width=1700&userId=&cache=v2](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F53e7af22-4a8d-459b-a20a-095853a4baf7%2FAPI_6.jpg?table=block&id=1814405e-cbee-434a-8ed6-5656b895a6f4&spaceId=83c75a39-3aba-4ba4-a792-7aefe4b07895&width=1700&userId=&cache=v2)
+
+    아이폰은 하나의 컴퓨터입니다. 외부로부터 데이터를 받아서 보여주고, 사용자의 입력을 받아서 외부로 데이터를 넘겨주는 일을 합니다. 이때 아이폰을 클라이언트라고 하고, 데이터를 주고받은 외부의 컴퓨터를 서버라고 표현합니다. 
+
+    자, 우리가 식당에 방문했다고 합시다. 우리는 고객(client)이겠죠? 그리고 식당에서 일하는 분을 보통 종업원(server)라고 합니다. 우리는 메뉴에 있는 음식을 요청하고, 식당은 음식을 조리해서 우리에게 제공해 주죠! 이때 음식을 데이터라고 생각하면, 클라이언트와 서버와의 관계를 상상해 볼 수 있겠죠?
+
+    API는 클라이언트가 서버에 데이터를 요청할 때 미리 정해져있는 방법을 말합니다. 서버의 주소라든지, 요청 방식이라든지, 응답 방식 등의 규칙들이 있습니다. 
+
+    다시 식당에 대입해보면, 손님은 식당에 있는 메뉴만을 요청해야 합니다! 메뉴에도 없는 음식을 주문하면 식당은 음식을 제공해 주지 못할 겁니다. 이 요청 방식을 맞춰서 주문하는 것이 가장 핵심이라고 할 수 있죠!
+
+- 8) Alamofire 와 SwiftyJSON 로 데이터 통신 해보기
+    - Alamofire는 Swift를 위한 Swift로 쓰인 네트워크 라이브러리 입니다!
+
+        쉽고 간결하며, 무척 다양한 기능을 제공합니다.
+
+        ![https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F692b4b24-e17a-47ea-b2fa-d1c370baa077%2FUntitled.png?table=block&id=65adcbd3-2f1a-483c-a787-281d026e9583&spaceId=83c75a39-3aba-4ba4-a792-7aefe4b07895&width=1700&userId=&cache=v2](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F692b4b24-e17a-47ea-b2fa-d1c370baa077%2FUntitled.png?table=block&id=65adcbd3-2f1a-483c-a787-281d026e9583&spaceId=83c75a39-3aba-4ba4-a792-7aefe4b07895&width=1700&userId=&cache=v2)
+
+        [Alamofire/Alamofire](https://github.com/Alamofire/Alamofire)
+
+    - 서버의 결과로 받은 JSON 데이터를 Swift 에서 깔끔하게 사용할 수 있는 라이브러리인 SwiftyJSON 입니다!
+
+        [SwiftyJSON/SwiftyJSON](https://github.com/SwiftyJSON/SwiftyJSON)
+
+        - SwiftyJSON 도 Swift Package Mangaer 에 추가해주기
+
+            ```
+            https://github.com/SwiftyJSON/SwiftyJSON.git
+            ```
+
+            ![https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F36b776fe-ac07-48e4-8203-d67184ca3531%2FUntitled.png?table=block&id=9e315559-52be-46d5-bcb4-5d83068a1eea&spaceId=83c75a39-3aba-4ba4-a792-7aefe4b07895&width=6050&userId=&cache=v2](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F36b776fe-ac07-48e4-8203-d67184ca3531%2FUntitled.png?table=block&id=9e315559-52be-46d5-bcb4-5d83068a1eea&spaceId=83c75a39-3aba-4ba4-a792-7aefe4b07895&width=6050&userId=&cache=v2)
+
+    1. 프로젝트 설정에서 보안 설정 변경하기
+
+    `Info.plist` 파일에 `App Transport Security Settings` 를 추가하고 `Allow Arbitrary Loads` 를 YES로 선택한 후 추가해줍니다. 
+
+    ![https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F2b48582e-65d1-4bef-8ab5-55abf1f75885%2FUntitled.png?table=block&id=efc7288e-dac7-44ed-b8f8-6261ce927bc0&spaceId=83c75a39-3aba-4ba4-a792-7aefe4b07895&width=6050&userId=&cache=v2](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F2b48582e-65d1-4bef-8ab5-55abf1f75885%2FUntitled.png?table=block&id=efc7288e-dac7-44ed-b8f8-6261ce927bc0&spaceId=83c75a39-3aba-4ba4-a792-7aefe4b07895&width=6050&userId=&cache=v2)
+
+    보안 설정을 왜 바꾸나요?
+
+    애플은 iOS 9부터 무분별한 http 통신의 사용을 지양하고, 더 안전한 https 통신을 유도하기 위해 기본값으로 앱에서 http 통신을 막아뒀습니다. 하지만 여전히 http 통신을 사용하는 API 가 많고, 우리가 사용해 볼 API도 http 통신을 사용하기 때문에 보안 설정을 낮춰 줄게요!
+
+    2. 데이터 가져오기(GET)
+
+    API 주소(GET 요청) → [http://spartacodingclub.shop/review](http://spartacodingclub.shop/review)
+
+    **어떤 기능을 수행하는 API일까요?
+    웹페이지를** 보고, 생각해봅시다! [(링크)](http://spartacodingclub.shop/bookreview)
+
+    크롬브라우져 JSONView 설치하기 ([링크](https://chrome.google.com/webstore/detail/jsonview/chklaanhfefbnpoihckbnefhakgolnmc))
+
+    ```swift
+    import UIKit
+    import Alamofire
+    import SwiftyJSON
+
+    class ViewController: UIViewController {
+        
+        override func viewDidLoad() {
+            super.viewDidLoad()
+            
+            AF.request("http://spartacodingclub.shop/review").responseJSON { (response) in
+                var json = JSON(response.value!)
+                print(json["reviews"][0])
+            }
+        }
+    }
+    ```
+
+    3. 데이터 보내기(post)
+
+    API 주소(POST 요청) → [http://spartacodingclub.shop/review](http://spartacodingclub.shop/review) 
+
+    보내줄 데이터와 그 키값입니다!
+    title_give : 책 제목
+    author_give: 저자 이름
+    review_give: 리뷰 내용
+
+    ```swift
+    var parameters = [
+        "title_give": "너무나도 쉬운 iOS 개발",
+        "author_give": "주정한",
+        "review_give": "재밌어요!"
+    ]
+
+    AF.request("http://spartacodingclub.shop/review", method: .post, parameters: parameters).responseJSON { (response) in
+        var json = JSON(response.value!)
+        print(json)
+    }
+    ```
