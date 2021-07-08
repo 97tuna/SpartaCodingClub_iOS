@@ -52,3 +52,25 @@
 <br>
 
 > 3주차 과제로 입력창과 결과창이 구분되고, 피보나치킨앱과 구성이 유사한 국민건강보험료 계산 앱을 제작하였다.
+
+## [4주차_실습 & 과제](https://github.com/97tuna/SpartaCodingClub_iOS/tree/master/3%EC%A3%BC%EC%B0%A8)
+<!-- 피보나치킨 App (실습)-->
+<p align="center">
+    <img width="300px" src="https://user-images.githubusercontent.com/50114556/124816194-2f3b2280-dfa3-11eb-8552-5de7f52597fa.gif">
+    <img width="300px" src="https://drive.google.com/uc?export=view&id=12SQ5Ntaqko1K7tLzBaf8dZ3QNibqypNR">
+</p>
+<p align="center">
+    BookReviewApp(좌)ㅤㅤLinkMemoApp(우)
+</p>
+<br>
+
+> Almofire을 사용하여 GET, POST방식 통신을 구현해보고, SwiftyJSON을 사용하여 값을 읽고 가공하였다. 또한 SDWebImage 라이브러리를 사용하여 URL이미지를 불러오는 기능을 구현해 보았다. 강의에서 처음으로 CollectionView를 구현해 보았다. NavigationController를 이용해서 실습을 진행하였다.
+
+<!-- 고양이 사진 App (과제)-->
+<p align="center">
+    <img width="300px" src="https://user-images.githubusercontent.com/50114556/124878957-a6a29d80-e007-11eb-9dad-07fdbb505e24.gif">
+</p>
+<br>
+
+> 4주차 실습과 동일하지만 SDWebImage를 사용하지 않고 내가 좋아하는 KingFisher를 사용하여 URL이미지를 불러오도록 하였다. 새로고침을 누를때 마다 새로운 고양이 사진 또는 GIF가 나타난다.
+
