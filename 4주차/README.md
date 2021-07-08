@@ -1,4 +1,4 @@
-# SpartaCodingClub_iOS_강의노트_1주차
+# SpartaCodingClub_iOS_강의노트_4주차
 
 <p align="center">
     <img width="300px" src="https://user-images.githubusercontent.com/50114556/124816194-2f3b2280-dfa3-11eb-8552-5de7f52597fa.gif">
