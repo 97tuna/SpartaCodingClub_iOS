@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Finger Start View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="FingerStartViewController" customModule="FingerGame" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="손가락 묶기 게임" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dcO-9a-W7P">
+                                <rect key="frame" x="122.5" y="257" width="169" height="32"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
+                                <color key="textColor" name="green"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nYo-sZ-Zji">
+                                <rect key="frame" x="177.5" y="634" width="59" height="33"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="시작하기">
+                                    <color key="titleColor" name="yellow"/>
+                                </state>
+                                <connections>
+                                    <segue destination="BjQ-Go-2wa" kind="show" id="ePR-Q1-QFx"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="nYo-sZ-Zji" secondAttribute="bottom" constant="195" id="21b-JK-T0k"/>
+                            <constraint firstItem="dcO-9a-W7P" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="213" id="Rc5-qh-WVi"/>
+                            <constraint firstItem="nYo-sZ-Zji" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="rc9-GV-HwU"/>
+                            <constraint firstItem="dcO-9a-W7P" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="zFG-QL-j8R"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="139" y="138"/>
+        </scene>
+        <!--Finger Game View Controller-->
+        <scene sceneID="br2-QO-0wb">
+            <objects>
+                <viewController modalPresentationStyle="fullScreen" id="BjQ-Go-2wa" customClass="FingerGameViewController" customModule="FingerGame" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="C8l-fc-GbR">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1ie-Do-Xwr">
+                                <rect key="frame" x="20" y="74" width="27" height="25"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" image="xmark" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="26"/>
+                                </state>
+                                <connections>
+                                    <action selector="closeButtonClicked:" destination="BjQ-Go-2wa" eventType="touchUpInside" id="XFE-uS-CtA"/>
+                                </connections>
+                            </button>
+                            <view multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2ku-29-8wu" customClass="FingerGameView" customModule="FingerGame" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="107" width="414" height="789"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BWg-De-p1v">
+                                <rect key="frame" x="199" y="72" width="16" height="29"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="w1F-UL-dPJ"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="2ku-29-8wu" firstAttribute="top" secondItem="1ie-Do-Xwr" secondAttribute="bottom" constant="8" symbolic="YES" id="00b-Ej-yuL"/>
+                            <constraint firstItem="2ku-29-8wu" firstAttribute="leading" secondItem="w1F-UL-dPJ" secondAttribute="leading" id="AsT-P2-ag6"/>
+                            <constraint firstItem="1ie-Do-Xwr" firstAttribute="top" secondItem="w1F-UL-dPJ" secondAttribute="top" constant="30" id="Bnu-Jf-3c5"/>
+                            <constraint firstItem="BWg-De-p1v" firstAttribute="centerY" secondItem="1ie-Do-Xwr" secondAttribute="centerY" id="JCz-dT-Z9m"/>
+                            <constraint firstAttribute="bottom" secondItem="2ku-29-8wu" secondAttribute="bottom" id="Or4-AD-j1c"/>
+                            <constraint firstItem="1ie-Do-Xwr" firstAttribute="leading" secondItem="w1F-UL-dPJ" secondAttribute="leading" constant="20" id="aNL-Fy-fM8"/>
+                            <constraint firstItem="2ku-29-8wu" firstAttribute="trailing" secondItem="w1F-UL-dPJ" secondAttribute="trailing" id="eLS-dT-SP3"/>
+                            <constraint firstItem="BWg-De-p1v" firstAttribute="centerX" secondItem="C8l-fc-GbR" secondAttribute="centerX" id="qBD-Oe-6le"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="GzO-Ah-exO"/>
+                    <connections>
+                        <outlet property="gameView" destination="2ku-29-8wu" id="a8y-9G-tJR"/>
+                        <outlet property="secondLabel" destination="BWg-De-p1v" id="4oB-u6-fkd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LMd-8D-DqI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="892.75362318840587" y="137.94642857142856"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="xmark" catalog="system" width="128" height="113"/>
+        <namedColor name="green">
+            <color red="0.61960784313725492" green="0.87058823529411766" blue="0.45098039215686275" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="yellow">
+            <color red="0.96862745098039216" green="0.91764705882352937" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
