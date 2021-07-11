@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <FileRef
+      location = "group:/Users/ldh/Desktop/Xcode/SpartaCodingClub_iOS/5&#x110c;&#x116e;&#x110e;&#x1161;/TaggerGame/TaggerGame.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Pods/Pods.xcodeproj">
+   </FileRef>
+</Workspace>

@@ -52,7 +52,7 @@
 
 > 3주차 과제로 입력창과 결과창이 구분되고, 피보나치킨앱과 구성이 유사한 국민건강보험료 계산 앱을 제작하였다.
 
-## [4주차_실습 & 과제](https://github.com/97tuna/SpartaCodingClub_iOS/tree/master/3%EC%A3%BC%EC%B0%A8)
+## [4주차_실습 & 과제](https://github.com/97tuna/SpartaCodingClub_iOS/tree/master/4%EC%A3%BC%EC%B0%A8)
 <!-- 피보나치킨 App (실습)-->
 <p align="center">
     <img width="300px" src="https://user-images.githubusercontent.com/50114556/124816194-2f3b2280-dfa3-11eb-8552-5de7f52597fa.gif">
@@ -73,3 +73,21 @@
 
 > 4주차 실습과 동일하지만 SDWebImage를 사용하지 않고 내가 좋아하는 KingFisher를 사용하여 URL이미지를 불러오도록 하였다. 새로고침을 누를때 마다 새로운 고양이 사진 또는 GIF가 나타난다.
 
+## [5주차_실습 & 과제](https://github.com/97tuna/SpartaCodingClub_iOS/tree/master/5%EC%A3%BC%EC%B0%A8)
+<!-- FingerGame (실습)-->
+<p align="center">
+    <img width="300px" src="https://user-images.githubusercontent.com/50114556/125057928-b47a2080-e0e4-11eb-8e8e-7d89362ef1b0.gif">
+</p>
+
+> 5주차의 실습은 다양한 터치, 진동, 애니메이션을 적용하는 방법을 학습하였다. 손가락 묶기(편가르기 게임인 데덴찌등) 게임앱을 통해서 다양한 인터렉션을 구현하였다. iOS앱은 최대 5개의 터치를 식별할 수 있다.
+
+> FireBase를 통해서 광고를 넣는 방법과 애널리틱스 사용법을 학습하였다. 마지막으로는 적용된 App을 AppStore에 등록하는 절차까지 진행 후 5주차의 iOS앱 기초반을 마무리 하였다.
+
+<!-- TaggerGame (과제)-->
+> TaggerGameApp을 과제로 제작하였다. 앞의 FingerGame에서 알고리즘을 변경하여 팀을 나누는것이 아닌 술래 단 1사람만 결정할 수 있도록 변경하였다.
+
+
+## iOS 기초반 5주 회고
+> 기초반 이었지만 내가 헷갈리고 있거나 어려운 부분을 다시 바로잡을 수 있는 좋은 기회가 되었다. 길다면 길고 짧다면 짧은 5주였지만 과제나 실습 주제가 재미있어서 금방금방 시간이 지나간 것 같다. 한이음에서 2회차 쿠폰을 또 주었는데 이제 뭘 들어야할지 고민해 보는 시간을 가져보기로 했다.
+
+끝
